@@ -1,0 +1,39 @@
+<idea-plugin>
+  <id>me.hfox.jetbrains-asm</id>
+  <name>Amazon Secrets Manager</name>
+  <version>1.0</version>
+  <vendor email="harry.fox@gendis.co.uk" url="https://hfox.me/">Harry Fox</vendor>
+
+  <description><![CDATA[
+      DESCRIPTIONNNNNNN. WHAT DOES THIS PLUGIN REALLY DOOOOO
+    ]]></description>
+
+  <change-notes><![CDATA[
+      Some change notes........................................................
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="173.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <depends>com.intellij.modules.database</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+    <applicationService serviceInterface="me.hfox.jetbrainasm.JetbrainsAsmPlugin"
+                        serviceImplementation="me.hfox.jetbrainasm.impl.JetbrainsAsmPluginImpl"/>
+    <projectService serviceInterface="me.hfox.jetbrainasm.TestService"
+                    serviceImplementation="me.hfox.jetbrainasm.impl.TestServiceImpl"/>
+  </extensions>
+
+  <actions>
+    <!-- Add your actions here -->
+    <action id="JetbrainsAsmPlugin.AmazonSecretOptions" class="me.hfox.jetbrainasm.AmazonSecretOptionsMenu"
+            text="Amazon Secrets" description="Change settings for Amazon secrets">
+      <add-to-group group-id="MainMenu" anchor="first"/>
+    </action>
+  </actions>
+
+</idea-plugin>
